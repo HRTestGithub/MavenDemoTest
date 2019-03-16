@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="45760" started-at="2019-03-04T15:52:03Z" finished-at="2019-03-04T15:52:48Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="45760" started-at="2019-03-04T15:52:03Z" finished-at="2019-03-04T15:52:48Z">
+      <class name="com.qa.tests.LoginTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.qa.tests.LoginTest@15b5592]" name="setup" is-config="true" duration-ms="34588" started-at="2019-03-04T21:22:03Z" finished-at="2019-03-04T21:22:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyCRMLogin()[pri:0, instance:com.qa.tests.LoginTest@15b5592]" name="verifyCRMLogin" duration-ms="11125" started-at="2019-03-04T21:22:37Z" finished-at="2019-03-04T21:22:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCRMLogin -->
+      </class> <!-- com.qa.tests.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

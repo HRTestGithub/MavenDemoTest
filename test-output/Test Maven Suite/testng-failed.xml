@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Test Maven Suite]">
+  <test name="Test Maven Testing(failed)">
+    <classes>
+      <class name="com.qa.tests.LoginTest">
+        <methods>
+          <include name="verifyCRMLogin"/>
+        </methods>
+      </class> <!-- com.qa.tests.LoginTest -->
+    </classes>
+  </test> <!-- Test Maven Testing(failed) -->
+</suite> <!-- Failed suite [Test Maven Suite] -->
