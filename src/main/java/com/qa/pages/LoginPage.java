@@ -1,28 +1,38 @@
 package com.qa.pages;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+import com.qa.base.TestBase;
+
+public class LoginPage extends TestBase{
 	
-	public WebDriver driver;
-	/*@FindBy(xpath="//input[@name='username']")
+	@FindBy(xpath="//input[@name='username']")
 	WebElement usernametxtBox;
 	@FindBy(xpath="//input[@name='password']")
 	WebElement passwordtxtBox;
 	@FindBy(xpath="//input[contains(@value,'Login')]")
-	WebElement loginBtn;*/
+	WebElement loginBtn;
 	
-	public LoginPage(WebDriver driver) {
+	public LoginPage() {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void CRMLogin(String usernm, String passwd) {
-		driver.findElement(By.xpath("//input[@name='username']")).sendKeys(usernm);
-		driver.findElement(By.xpath("//input[@name='password']")).sendKeys(passwd);
-		driver.findElement(By.xpath("//input[contains(@value,'Login')]")).click();
+	public String validateLoginPageTitle() {
+		return driver.getTitle();
 	}
+	
+	public HomePage login(String un, String pw ) {
+		usernametxtBox.sendKeys(un);
+		passwordtxtBox.sendKeys(pw);
+		loginBtn.click();
+		return new HomePage();
+	}
+	
 }

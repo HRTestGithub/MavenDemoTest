@@ -5,26 +5,49 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class LoginTest {
-public WebDriver driver;
+import com.qa.base.TestBase;
+import com.qa.pages.HomePage;
+import com.qa.pages.LoginPage;
 
+import junit.framework.Assert;
+
+public class LoginTest extends TestBase {
+
+	public LoginPage loginPage;
+	public HomePage homePage;
+	
+	public LoginTest() {
+		super();
+	}
 @BeforeMethod
 public void setup() {
-	System.setProperty("webdriver.chrome.driver", "C:\\Users\\admin\\Downloads\\chromedriver.exe");
-	driver=new ChromeDriver();
-	driver.get("https://classic.crmpro.com/login.cfm");
-	driver.manage().window().maximize();
-	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	initialization();
+	loginPage=new LoginPage();
+}
+@Test(priority=1)
+public void loginPageTitleTest() {
+	System.out.println("Running first test in LoginTest");
+	String title=loginPage.validateLoginPageTitle();
+	System.out.println("Login Page title is : "+title);
+	Assert.assertEquals("CRMPRO Log In Screen", title);
 }
 
-@Test
-public void verifyCRMLogin() {
-	driver.findElement(By.xpath("//input[@name='username']")).sendKeys("Hafiz123");
-	driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Test123");
-	driver.findElement(By.xpath("//input[contains(@value,'Login')]")).click();
-	System.out.println("Login Successfull");
+@Test(priority=2)
+public void verifyloginTest() {
+	System.out.println("Running second test in LoginTest");
+	homePage=loginPage.login(prop.getProperty("username"),prop.getProperty("password"));
+	System.out.println("Login is successfull");
+
+}
+
+@AfterMethod
+public void tearDown() {
+	driver.quit();
 }
 }

@@ -1,3 +1,4 @@
 com\qa\tests\DemoTest1.class
 com\qa\tests\LoginTest.class
+com\qa\tests\HomePageTest.class
 com\qa\tests\DemoTest.class

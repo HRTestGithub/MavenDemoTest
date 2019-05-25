@@ -2,9 +2,8 @@
 <suite name="Test Maven Suite">
 	<test name="Test Maven Testing">
   		<classes>
-  			<class name="com.qa.tests.DemoTest"/>
-  			<class name="com.qa.tests.DemoTest1"/>
       		<class name="com.qa.tests.LoginTest"/>
+      		<class name="com.qa.tests.HomePageTest"/>
     	</classes>
   	</test>
 </suite>
